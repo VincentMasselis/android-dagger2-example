@@ -1,8 +1,7 @@
-package fr.vincentmasselis.daggersample.utils;
+package fr.vincentmasselis.daggersample.data.utils;
 
 import android.support.annotation.NonNull;
 
-import fr.vincentmasselis.daggersample.data.utils.StringParser;
 import com.squareup.okhttp.Call;
 import com.squareup.okhttp.Callback;
 import com.squareup.okhttp.Request;
@@ -19,6 +18,8 @@ import java.util.concurrent.TimeoutException;
 /**
  * Inspiré par RequestFuture de volley :
  * https://github.com/mcxiaoke/android-volley/blob/master/src/main/java/com/android/volley/toolbox/RequestFuture.java
+ * <p>
+ * Cette classe permet de wrapper la callback de OkHTTP dans une Future.
  */
 public class RequestFuture<T> implements Future<T>, Callback {
     private final Call mRequest;

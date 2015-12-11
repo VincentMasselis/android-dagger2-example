@@ -3,13 +3,21 @@ package fr.vincentmasselis.daggersample.data.post.parser;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONException;
 import com.alibaba.fastjson.JSONObject;
-import fr.vincentmasselis.daggersample.data.utils.FastJsonParser;
-import fr.vincentmasselis.daggersample.data.utils.StringParser;
-import fr.vincentmasselis.daggersample.model.Post;
 
 import javax.inject.Inject;
 import javax.inject.Provider;
 
+import fr.vincentmasselis.daggersample.data.utils.FastJsonParser;
+import fr.vincentmasselis.daggersample.data.utils.StringParser;
+import fr.vincentmasselis.daggersample.model.Post;
+
+/**
+ * Cette classe permet de parser une {@link String} ou un {@link JSONObject} en {@link Post}. Comme
+ * elle est capable de faire les 2, elle implémente 2 interfaces différentes.
+ *
+ * @see StringParser
+ * @see FastJsonParser
+ */
 public class FastJsonPostParser implements StringParser<Post>, FastJsonParser<Post> {
 
     private final Provider<Post> mPostProvider;

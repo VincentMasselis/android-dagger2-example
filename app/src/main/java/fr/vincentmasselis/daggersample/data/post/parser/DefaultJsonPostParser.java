@@ -1,21 +1,32 @@
 package fr.vincentmasselis.daggersample.data.post.parser;
 
-import fr.vincentmasselis.daggersample.data.utils.JsonParser;
-import fr.vincentmasselis.daggersample.data.utils.StringParser;
-import fr.vincentmasselis.daggersample.model.Post;
-
 import org.json.JSONException;
 import org.json.JSONObject;
 
 import javax.inject.Inject;
 import javax.inject.Provider;
 
-public class PostParser implements StringParser<Post>, JsonParser<Post> {
+import fr.vincentmasselis.daggersample.data.utils.DefaultJsonParser;
+import fr.vincentmasselis.daggersample.data.utils.StringParser;
+import fr.vincentmasselis.daggersample.model.Post;
+
+/**
+ * Cette classe permet de parser une {@link String} ou un {@link JSONObject} en {@link Post}. Comme
+ * elle est capable de faire les 2, elle implémente 2 interfaces différentes.
+ *
+ * @see StringParser
+ * @see DefaultJsonParser
+ */
+public class DefaultJsonPostParser implements StringParser<Post>, DefaultJsonParser<Post> {
 
     private final Provider<Post> mPostProvider;
 
+    /**
+     * @param postProvider Ce provider permet de récupérer une nouvelle instance de {@link Post} à
+     *                     chaque fois que l'on va en parser une nouveau.
+     */
     @Inject
-    public PostParser(Provider<Post> postProvider) {
+    public DefaultJsonPostParser(Provider<Post> postProvider) {
         mPostProvider = postProvider;
     }
 

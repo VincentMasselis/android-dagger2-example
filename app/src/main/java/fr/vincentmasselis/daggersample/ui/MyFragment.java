@@ -31,6 +31,10 @@ import fr.vincentmasselis.daggersample.ui.utils.UiScope;
 
 public class MyFragment extends Fragment {
 
+    /**
+     * Fonctionne exactement de la même manière que
+     * {@link fr.vincentmasselis.daggersample.ui.MyActivity.MyActivityComponent}
+     */
     @UiScope
     @Component(dependencies = ManagerComponent.class, modules = UiModule.class)
     public interface MyFragmentComponent {
@@ -55,14 +59,11 @@ public class MyFragment extends Fragment {
     @Override
     public void onAttach(Context context) {
         super.onAttach(context);
-        DaggerMyFragment_MyFragmentComponent.builder()
+        DaggerMyFragment_MyFragmentComponent.builder()//Voir dans MyActivity#onCreate(Bundle) pour comprendre
                 .managerComponent(MyApplication.getManagerComponent(getActivity().getApplication()))
                 .uiModule(new UiModule(context))
                 .build()
                 .inject(this);
-        Bundle bundle = new Bundle();
-        bundle.putStringArray(null, null);
-        bundle.getStringArray(null);
         mOneLoader = getLoaderManager().initLoader(42, null, mOnePostLoaderCallback);
         mFiveLoader = getLoaderManager().initLoader(43, null, mFivePostLoaderCallback);
     }
