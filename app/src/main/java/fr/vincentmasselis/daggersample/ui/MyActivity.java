@@ -53,11 +53,11 @@ public class MyActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        DaggerMyActivity_MyActivityComponent.builder()
+        MyActivityComponent component = DaggerMyActivity_MyActivityComponent.builder()
                 .managerComponent(MyApplication.getManagerComponent(getApplication()))//Comme MyActivityComponent contient une dépendance vers ManagerComponent, il faut donc récupérer le graphe de données de ManagerComponent déjà instancié par l'application, ce graphe est conservé par MyApplication
                 .uiModule(new UiModule(this))//Voir MyActivityComponent
-                .build()
-                .inject(this);//C'est ici que mPostManager est injecté à MyActivity.
+                .build();
+        component.inject(this);//C'est ici que mPostManager est injecté à MyActivity.
 
         setContentView(R.layout.activity_main);
 
