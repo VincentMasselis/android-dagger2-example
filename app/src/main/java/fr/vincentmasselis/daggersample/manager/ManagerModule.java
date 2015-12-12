@@ -16,8 +16,8 @@ public class ManagerModule {
 
     /**
      * {@link fr.vincentmasselis.daggersample.ui.MyActivity utilise
-     * {@link PostManager}} pour fonctionner. Mais {@link PostManager} est une interface  Pour dire
-     * à Dagger2 quelle implementation utiliser nous devons écrire ce genre de méthode.
+     * {@link PostManager}} pour fonctionner. Mais {@link PostManager} est une interface!
+     * Pour dire à Dagger2 quelle implementation utiliser nous devons écrire ce genre de méthode.
      *
      * @param postManagerImpl Implémentation de {@link PostManager}
      * @see fr.vincentmasselis.daggersample.ui.MyActivity#mPostManager

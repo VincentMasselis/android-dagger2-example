@@ -33,7 +33,7 @@ dependencies {
 
     // Pour la démo nous allons choisir quelle libraire de parsing nous allons utiliser grâce à
     // Dagger2, une fois ça sera la libraire de base d'Android, une autre fois ça sera FastJson,
-    // ou encore PostModule.
+    // voir le fichier PostModule.
     compile 'com.alibaba:fastjson:1.2.6'
     // Permet de réaliser les appels réseaux.
     compile 'com.squareup.okhttp:okhttp:2.4.0'
