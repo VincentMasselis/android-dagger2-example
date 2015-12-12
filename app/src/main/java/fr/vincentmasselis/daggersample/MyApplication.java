@@ -14,9 +14,9 @@ public class MyApplication extends Application {
     /**
      * Dès que l'application se crée on instancie le graphe de données {@link ManagerComponent}.
      * Pour que ce {@link dagger.Component} puisse fonctionner, il a besoin de 3 modules :
-     * {@link ManagerModule}, {@link ApplicationModule} et {@link EndpointModule}. Chacun de ces
-     * modules "bind" des interfaces à des implémentations si l'on souhaite se faire injecter des
-     * interfaces.
+     * {@link ManagerModule}, {@link ApplicationModule} et {@link EndpointModule}.
+     * Chacun de ces modules "bind" des interfaces à des implémentations si l'on souhaite se faire
+     * injecter des interfaces.
      *
      * @see fr.vincentmasselis.daggersample.manager.post.PostManager
      */

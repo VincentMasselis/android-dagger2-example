@@ -33,13 +33,14 @@ public class PostEndpointImpl implements PostEndpoint {
      * Si l'on regarde attentivement, on constate que le 2ème paramètre est annoté avec
      * {@link DefaultJson}. Cette annotation permet de choisir quelle implémentation nous voulons
      * utiliser pour {@link StringParser<Post>}. Si nous utilisons {@link DefaultJson} alors ce sera
-     * {@link DefaultJsonPostParser} qui sera l'implémentation si nous utilisons
+     * {@link DefaultJsonPostParser} qui sera l'implémentation. En revanche, si nous utilisons
      * {@link fr.vincentmasselis.daggersample.data.post.parser.FastJson} alors ce sera
      * {@link FastJsonPostParser} qui sera utilisé.
      * Pour éviter que le même parser travaille en même temps sur 2 Json différents (ce qui peut
-     * arriver si vous faîte appel en même temps au WS sur 2 thread différents) nous utilisons un
-     * provider qui nous fourni une nouvelle instance d'objet à chaque fois que l'on souhaite
-     * récupérer un parser. Ainsi, si 2 appels sont effectués en même temps, la parsing est réalisé
+     * arriver si vous faîte appel, en même temps, au WS sur 2 thread différents) nous utilisons un
+     * provider qui nous fournit une nouvelle instance d'objet à chaque fois que l'on souhaite
+     * récupérer un parser.
+     * Ainsi, si 2 appels sont effectués en même temps, la parsing est réalisé
      * par 2 objects différents ce qui limite les effets négatifs des appels concurrentiels mal
      * gérés.
      *

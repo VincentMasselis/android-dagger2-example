@@ -8,9 +8,10 @@ import dagger.Module;
 import dagger.Provides;
 
 /**
- * Ce module défini l'objet injectable Context. Ce module est utilisé par
- * {@link fr.vincentmasselis.daggersample.manager.ManagerComponent} afin que tout les objets du
- * graphe puisse s'injecter un Context qui sera dans ce cas {@link MyApplication}
+ * Ce module définit l'objet injectable Context. Il est utilisé par
+ * {@link fr.vincentmasselis.daggersample.manager.ManagerComponent} afin que tous les objets du
+ * graphe puissent s'injecter un {@link android.content.Context} qui sera, dans ce cas,
+ * {@link MyApplication}
  */
 @Module
 public class ApplicationModule {

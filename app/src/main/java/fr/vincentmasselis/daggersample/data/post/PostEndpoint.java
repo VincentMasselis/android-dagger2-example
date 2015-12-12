@@ -6,7 +6,7 @@ import java.util.concurrent.Future;
 import fr.vincentmasselis.daggersample.model.Post;
 
 /**
- * Interface qui définie les méthodes utilisés par un Endpoint pour récupérer les
+ * Interface qui définit les méthodes utilisées par un Endpoint pour récupérer les
  * posts d'un web service.
  * Quand un object a besoin de faire des appels WS pour récupérer les posts, il doit se faire
  * injecter cette interface (un des principes de base de l'IOC). Cependant, Dagger2 n'est pas
