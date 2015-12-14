@@ -152,3 +152,6 @@ Voici un schéma (non standardisé) de la structures des graphes, modules et bin
 ## Conclusion
 Voilà tout est dit. J'espère que ce projet d'exemple pourra vous aider dans la création d'applications propres et bien structurés.
 Mot de la fin : Bon courage.
+
+## Remerciements
+Merci à [quentin7b](https://github.com/quentin7b) pour la relecture des commantaires.
