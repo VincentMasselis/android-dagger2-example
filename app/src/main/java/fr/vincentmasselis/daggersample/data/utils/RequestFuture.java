@@ -19,7 +19,7 @@ import java.util.concurrent.TimeoutException;
  * Inspiré par RequestFuture de volley :
  * https://github.com/mcxiaoke/android-volley/blob/master/src/main/java/com/android/volley/toolbox/RequestFuture.java
  * <p>
- * Cette classe permet de wrapper la callback de OkHTTP dans une Future.
+ * Cette classe permet de wrapper la callback de OkHTTP dans une {@link java.util.concurrent.Future}.
  */
 public class RequestFuture<T> implements Future<T>, Callback {
     private final Call mRequest;

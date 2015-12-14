@@ -9,9 +9,9 @@ import dagger.Provides;
 import fr.vincentmasselis.daggersample.data.post.PostModule;
 
 /**
- * Ce module défini un object injectable qui pourra être utilisé par tous les Endpoint de
- * l'application. Comme le rôle des endpoints est de faire un appel réseaux, ce module défini
- * l'objet injectable {@link OkHttpClient} pour que les endpoints puissent faires des appels réseaux
+ * Ce module définit un object injectable qui pourra être utilisé par tous les Endpoint de
+ * l'application. Comme le rôle des endpoints est de faire un appel réseau, ce module définit
+ * l'objet injectable {@link OkHttpClient} pour que les endpoints puissent faire des appels réseaux
  *
  * @see fr.vincentmasselis.daggersample.data.post.PostEndpoint
  */

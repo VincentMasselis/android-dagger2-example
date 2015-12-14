@@ -25,7 +25,7 @@ public class PostManagerImpl implements PostManager {
      * @param postEndpoint Object à injecter. En codant cette classe vous n'avez en réalité aucune
      *                     certitude de l'implémentation {@link PostEndpoint} utilisée. Dans ce
      *                     projet d'exemple il n'existe qu'une seule implémentation mais il est
-     *                     possible qu'il y en ai plusieurs dans le futur pour différentes raisons.
+     *                     possible qu'il y en ait plusieures dans le futur pour différentes raisons.
      */
     @Inject
     public PostManagerImpl(PostEndpoint postEndpoint) {

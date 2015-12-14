@@ -9,7 +9,8 @@ import javax.inject.Qualifier;
 /**
  * Annotation qui permet d'indentifier quelle implémentation de
  * {@link fr.vincentmasselis.daggersample.data.utils.StringParser<fr.vincentmasselis.daggersample.model.Post>}
- * on souhaite récupérer. Dans le cas présent ce sera l'implémentation {@link FastJsonPostParser}.
+ * on souhaite récupérer.
+ * Dans le cas présent ce sera l'implémentation {@link FastJsonPostParser}.
  *
  * @see fr.vincentmasselis.daggersample.data.utils.StringParser<fr.vincentmasselis.daggersample.model.Post>
  * @see FastJsonPostParser

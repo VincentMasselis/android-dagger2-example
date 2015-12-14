@@ -24,17 +24,17 @@ dependencies {
     compile 'com.android.support:support-v4:23.1.1'
     compile 'com.android.support:appcompat-v7:23.1.1'
 
-    // Je pourrais utiliser provided au lieu de apt mais dans ce cas, le sources générées ne sont pas
+    // Je pourrais utiliser provided au lieu de apt mais dans ce cas, les sources générées ne sont pas
     // vues par Android Studio et l'autocomplétion ne fonctione pas.
     apt 'com.google.dagger:dagger-compiler:2.0.2'
     compile 'com.google.dagger:dagger:2.0.2'
-    //Nécessaire pour pouvoir utiliser l'annotation @Inject
+    // Nécessaire pour pouvoir utiliser l'annotation @Inject
     compile 'javax.annotation:jsr250-api:1.0'
 
     // Pour la démo nous allons choisir quelle libraire de parsing nous allons utiliser grâce à
-    // Dagger2, une fois ça sera la libraire intégrée à Android, une autre fois ça sera FastJson,
-    // voir PostModule.
+    // Dagger2, une fois ça sera la libraire de base d'Android, une autre fois ça sera FastJson,
+    // voir le fichier PostModule.
     compile 'com.alibaba:fastjson:1.2.6'
-    // Permet de réaliser des appels réseaux.
+    // Permet de réaliser les appels réseaux.
     compile 'com.squareup.okhttp:okhttp:2.4.0'
 }

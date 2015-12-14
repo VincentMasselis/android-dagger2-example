@@ -4,6 +4,10 @@ import javax.inject.Inject;
 
 public class Post {
 
+    /**
+     * Pour pouvoir avoir une instance de {@link Post} dans son code, il faut ajouter
+     * l'annotation {@link Inject} au constructeur.
+     */
     @Inject
     public Post() {
     }

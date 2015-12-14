@@ -22,7 +22,7 @@ import fr.vincentmasselis.daggersample.data.utils.StringParser;
 import fr.vincentmasselis.daggersample.model.Post;
 
 /**
- * Ce module défini tous les objects injectables nécessaire pour faire fonctionner le
+ * Ce module définit tous les objects injectables nécessaires pour faire fonctionner le
  * {@link PostEndpoint}
  */
 @Module
@@ -30,7 +30,7 @@ public class PostModule {
 
     /**
      * {@link fr.vincentmasselis.daggersample.manager.post.PostManagerImpl utilise {@link PostEndpoint}}
-     * pour fonctionner. Mais {@link PostEndpoint} est une interface ! Pour dire à Dagger2 quelle
+     * pour fonctionner. Mais {@link PostEndpoint} est une interface! Pour dire à Dagger2 quelle
      * implementation utiliser nous devons écrire ce genre de méthode.
      *
      * @param postEndpointImpl Implémentation de {@link PostEndpoint}
@@ -42,7 +42,7 @@ public class PostModule {
         return postEndpointImpl;
     }
 
-    ////////////////Parsers avec l'api de base
+    //////////////// Parsers avec l'api de base
 
     /**
      * Permet de définir une implémentation pour {@link StringParser<Post>}, dans le cas présent il
@@ -95,7 +95,7 @@ public class PostModule {
     }
 
     /**
-     * Définie une implémentation pour parser les listes de {@link Post} reçus en json.
+     * Définie une implémentation pour parser les listes de {@link Post} reçues en json.
      * {@link #defaultJsonStringPostParser(DefaultJsonPostParser)} et
      * {@link #fastJsonStringPostParser(FastJsonPostParser)} implémentent la même interface mais
      * grâce à l'utilisation des annotations {@link FastJson} et {@link DefaultJson}, on peut choisir
