@@ -154,4 +154,4 @@ Voilà tout est dit. J'espère que ce projet d'exemple pourra vous aider dans la
 Mot de la fin : Bon courage.
 
 ## Remerciements
-Merci à [quentin7b](https://github.com/quentin7b) pour la relecture des commantaires.
+Merci à [quentin7b](https://github.com/quentin7b) pour la relecture des commentaires.
