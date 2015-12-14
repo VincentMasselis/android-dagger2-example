@@ -51,6 +51,14 @@ public class PostModule {
 Pour ce faire, il faut écrire une méthode dans un module. Cette méthode peut avoir 1 ou plusieurs implémentations en paramètre et en retour l'interface que l'on veut implémenter. Et voila c'est comme ça que l'on défini un binding.
 Comme vous pouvez le voir dans cet exemple, j'ai ajouté l'annotation @Singleton qui permet permet à l'instance de PostManager d'être unique dans le graphe de donné qui utilise ce module.
 
+Un objet par défaut n'est pas injectable, même si aucun constructeur n'est définit. Pour dire à Dagger2 que tel objet est injectable, il est obligatoire d'ajouter l'annotation @Inject sur le constructeur. 
+```java
+@Inject
+public Post() {
+}
+```
+C'est tout ce qu'il y a à faire.
+
 Maintenant que vous avez fait le lien entre les concepts de l'IOC et Dagger2, il est temps d'utiliser nos graphes de données.
 
 ## Créer un graph de données
