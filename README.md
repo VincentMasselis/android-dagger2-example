@@ -4,7 +4,7 @@ Projet Android en Français qui montre un exemple d'utilisation de Dagger2.
 ## Pourquoi ?
 * Pour aider la communauté Française des developpeurs Android à comprendre les concepts complexes que Dagger2 utilise (surtout les Components sur lequel je me suis arraché les cheuveux)
 * Parce que la doc offielle est très bien fichue mais qu'il faut s'accorcher pour tout comprendre.
-* Pour montrer autre chose que l'hatibuel exemple de la machine à café que tout le monde utilise.
+* Pour montrer autre chose que l'habituel exemple de la machine à café que tout le monde reprend.
 * Pour mettre en valeur cette librairie très performante et très bien fichue (Je suis passé par RoboGuice avant, c'est le jour et la nuit).
 * Parce que Dagger2 ne s'utilise pas vraiment comme la plupart des librairies d'IOC. La plupart des développeurs mettent toute leur application dans le même graphe, Dagger2 facilite et pousse la création de multitude de graphes pour découper votre application et cloisoner les instances des unes des autres.
 
@@ -24,7 +24,7 @@ public interface ManagerComponent {
   /* ... */
 }
 ```
-Ici je déclare un graphe de donnée nommé ManagerComponent qui utilise 3 modules EndpointModule, ManagerModule et ApplicationModule.
+Ici je déclare un graphe de données nommé ManagerComponent qui utilise 3 modules EndpointModule, ManagerModule et ApplicationModule.
 
 Déclarer un module est assez simple, il suffit de créer une classe et de l'annoter avec @Module :
 ```java
@@ -49,7 +49,7 @@ public class PostModule {
 ```
 
 Pour ce faire, il faut écrire une méthode dans un module. Cette méthode peut avoir 1 ou plusieurs implémentations en paramètre et en retour l'interface que l'on veut implémenter. Et voila c'est comme ça que l'on défini un binding.
-Comme vous pouvez le voir dans cet exemple, j'ai ajouté l'annotation @Singleton qui permet permet à l'instance de PostManager d'être unique dans le graphe de donné qui utilise ce module.
+Comme vous pouvez le voir dans cet exemple, j'ai ajouté l'annotation @Singleton qui permet permet à l'instance de PostManager d'être unique dans le graphe de données qui utilise ce module.
 
 Un objet par défaut n'est pas injectable, même si aucun constructeur n'est définit. Pour dire à Dagger2 que tel objet est injectable, il est obligatoire d'ajouter l'annotation @Inject sur le constructeur. 
 ```java
@@ -118,8 +118,8 @@ public PostEndpointImpl(@FastJson Provider<StringParser<Post>> postParserProvide
 }
 ```
 ## Injecter un objet dans un graph après sa création
-Le framework Android ne facilite pas toujours les choses, je pense par exemple aux Activity. Le constructeur est appelé automatique par le Framework ce qui fait que l'Activity est créée dans aucun graphe de données.
-Or, nous, on voudrais qu'elle soit créée dans un graphe de données afin que l'on puisse s'injecter dans l'Activity des objets. Pour ce faire, il nécessaire d'injecter les membres de l'Activity à a posteriori de l'instanciation de l'Activity.
+Le framework Android ne facilite pas toujours les choses, je pense par exemple aux Activity. Le constructeur est appelé automatiquement par le Framework ce qui fait que l'Activity est créée dans aucun graphe de données.
+Or, nous, on voudrait qu'elle soit créée dans un graphe de données afin que l'on puisse s'injecter dans l'Activity des objets. Pour ce faire, il nécessaire d'injecter les membres de l'Activity à posteriori de l'instanciation de l'Activity.
 Pour faire cela il faut déclarer une méthode de ce type :
 ```java
 @Component
@@ -138,7 +138,7 @@ Puis il ne reste plus qu'injecter MyActivity, il faut récupérer l'instance du 
 component.inject(this);
 ```
 
-Et voila, votre membre mPostManager contient désormais une instance (à condition que votre graph de donnée déclare un binding de cette interface à une implémentation bien évidement)
+Et voila, votre membre mPostManager contient désormais une instance (à condition que votre graph de données déclare un binding de cette interface à une implémentation bien évidement)
 
 NB : Petite limitation, comme c'est Dagger2 qui va mettre une instance dans votre membre, vous ne pouvez pas mettre ce membre en privé, ni protégée, la visibilité doit être au minimum package.
 
@@ -146,19 +146,19 @@ NB : Petite limitation, comme c'est Dagger2 qui va mettre une instance dans votr
 L'application dispose d'un rôle simple : Télécharger des objets "Post" d'un web service, soit de façon unitaire, soit par bloc de 100 puis afficher leur contenu dans une TextView
 
 Pour l'exemple, je me suis imposé des containtes :
-* Je veux 1 graph de données qui contient toutes la logique métier (nommé manager) et les DAO dans le même graphe de données en instance unique (Singleton).
-* Je veux qu'un graph de données soit créé pour chaque écran et que chaque élément du graph puisse accéder au Context de l'écran. Par exemple, tout les objets créés dans le graph (MyActivityComponent) de MyActivity doivent pour s'injecter le Context de l'Activity.
+* Je veux 1 graph de données qui contient toute la logique métier (nommé manager) et les DAO dans le même graphe de données en instance unique (Singleton).
+* Je veux qu'un graph de données soit créé pour chaque écran et que chaque élément du graph puisse accéder au Context de l'écran. Par exemple, tout les objets créés dans le graph (MyActivityComponent) de MyActivity qui souhaitent s'injecter une instance de Context auront une instance de MyActivity alors que les managers qui s'injectent un Context auront MyApplication.
 * Je veux pouvoir changer d'implementation juste en modifiant une annotation.
 * Je veux pouvoir changer d'implementation au Runtime.
 
-Voici un schéma (non standardisé) de la structures des graphes, modules et bindings de l'application :
+Voici un schéma (non standardisé) de la structure des graphes, modules et bindings de l'application :
 ![Structure Dagger2 de l'application](https://raw.githubusercontent.com/VincentMasselis/dagger2-example/master/doc/dagger_architecture.png)
 * En bleu : Modules
-* En vert : Component
+* En vert : Components
 * En jaune : Bindings
 
 ## Conclusion
-Voilà tout est dit. J'espère que ce projet d'exemple pourra vous aider dans la création d'applications propres et bien structurés.
+Voilà tout est dit. J'espère que ce projet d'exemple pourra vous aider dans la création d'applications propres et bien structurés avec Dagger2
 Mot de la fin : Bon courage.
 
 ## Remerciements
